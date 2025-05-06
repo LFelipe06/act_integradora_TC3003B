@@ -398,3 +398,112 @@ void inv_img_color_vertical(char mask[10], char path[80]){
     fclose(outputImage);
 
 }
+
+void desenfoque(char mask[10], char path[80], int kernel_size) {
+    if (kernel_size % 2 == 0 || kernel_size < 3) {
+        fprintf(stderr, "Error: kernel_size debe ser impar y >= 3\n");
+        return;
+    }
+
+    FILE *image, *outputImage;
+    char add_char[80] = "./img_res/";
+    strcat(add_char, mask);
+    strcat(add_char, ".bmp");
+    printf("%s\n", add_char);
+
+    image = fopen(path, "rb");
+    if (image == NULL) {
+        fprintf(stderr, "Error: No se pudo abrir el archivo %s\n", path);
+        return;
+    }
+
+    outputImage = fopen(add_char, "wb");
+    if (outputImage == NULL) {
+        fprintf(stderr, "Error: No se pudo crear el archivo %s\n", add_char);
+        fclose(image);
+        return;
+    }
+
+    // Leer cabecera
+    unsigned char header[54];
+    for (int i = 0; i < 54; i++) {
+        header[i] = fgetc(image);
+        fputc(header[i], outputImage);
+    }
+
+    long tam = (long)header[4] * 65536 + (long)header[3] * 256 + (long)header[2];
+    long bpp = (long)header[29] * 256 + (long)header[28];
+    long ancho = (long)header[20] * 65536 + (long)header[19] * 256 + (long)header[18];
+    long alto = (long)header[24] * 65536 + (long)header[23] * 256 + (long)header[22];
+
+    printf("\n==========================\n");
+    printf("Tamaño archivo: %li\n", tam);
+    printf("Bits por pixel: %li\n", bpp);
+    printf("Largo img: %li\n", alto);
+    printf("Ancho img: %li\n", ancho);
+
+    // Asignar memoria para los píxeles RGB
+    unsigned char* r_in = (unsigned char*)malloc(ancho * alto);
+    unsigned char* g_in = (unsigned char*)malloc(ancho * alto);
+    unsigned char* b_in = (unsigned char*)malloc(ancho * alto);
+
+    if (!r_in || !g_in || !b_in) {
+        fprintf(stderr, "Error: No se pudo asignar memoria para canales de entrada.\n");
+        fclose(image);
+        fclose(outputImage);
+        return;
+    }
+
+    // Leer píxeles RGB
+    for (int i = 0; i < ancho * alto; i++) {
+        b_in[i] = fgetc(image);
+        g_in[i] = fgetc(image);
+        r_in[i] = fgetc(image);
+    }
+
+    // Aplicar blur por canal
+    unsigned char *r_out = malloc(ancho * alto);
+    unsigned char *g_out = malloc(ancho * alto);
+    unsigned char *b_out = malloc(ancho * alto);
+
+    int k = kernel_size / 2;
+
+    for (int y = 0; y < alto; y++) {
+        // printf("Procesando fila %d de %li...\n", y, alto);
+        for (int x = 0; x < ancho; x++) {
+            int r_sum = 0, g_sum = 0, b_sum = 0, count = 0;
+
+            for (int dy = -k; dy <= k; dy++) {
+                for (int dx = -k; dx <= k; dx++) {
+                    int nx = x + dx;
+                    int ny = y + dy;
+
+                    if (nx >= 0 && nx < ancho && ny >= 0 && ny < alto) {
+                        int idx = ny * ancho + nx;
+                        r_sum += r_in[idx];
+                        g_sum += g_in[idx];
+                        b_sum += b_in[idx];
+                        count++;
+                    }
+                }
+            }
+
+            int idx = y * ancho + x;
+            r_out[idx] = r_sum / count;
+            g_out[idx] = g_sum / count;
+            b_out[idx] = b_sum / count;
+        }
+    }
+
+    // Escribir imagen de salida RGB
+    for (int i = 0; i < ancho * alto; i++) {
+        fputc(b_out[i], outputImage);
+        fputc(g_out[i], outputImage);
+        fputc(r_out[i], outputImage);
+    }
+
+    free(r_in); free(g_in); free(b_in);
+    free(r_out); free(g_out); free(b_out);
+    fclose(image);
+    fclose(outputImage);
+}

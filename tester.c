@@ -40,7 +40,7 @@ int main() {
         inv_img_color(mask, file_name);
     }*/
 
-    omp_set_num_threads(5);
+    omp_set_num_threads(6);
     
     #pragma omp parallel
     {
@@ -76,6 +76,12 @@ int main() {
             {
                 printf("[Tarea 5] Conversión a grises\n");
                 gray_img("grey_1", "sample1.bmp");
+            }
+
+            #pragma omp task
+            {
+                printf("[Tarea 6] Desenfoque\n");
+                desenfoque("desenfoque", "sample1.bmp", 11);
             }
         }
     } // Barrera implícita - todas las tareas completan aquí
