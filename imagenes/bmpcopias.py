@@ -8,7 +8,7 @@ output_prefix = 'output_'
 
 # Duplicate the file 100 times
 for i in range(10):
-    output_filename = f'{output_prefix}{i}.bmp'
+    output_filename = f'{i}.bmp'
     shutil.copy(source_file, output_filename)
 
 print("100 copies created successfully.")
