@@ -469,110 +469,112 @@ void inv_img_color_vertical(char mask[10], char path[80]){
 
 }
 
-void desenfoque(char mask[10], char path[80], int kernel_size) {
-    if (kernel_size % 2 == 0 || kernel_size < 3) {
-        fprintf(stderr, "Error: kernel_size debe ser impar y >= 3\n");
+void desenfoque(const char* input_path, const char* name_output, int kernel_size) {
+    if (kernel_size < 55 || kernel_size > 155 || kernel_size % 2 == 0) {
+        printf("Kernel inválido. Debe ser impar y entre 55 y 155.\n");
         return;
     }
+
+    printf("\nAplicando blur con kernel %dx%d\n", kernel_size, kernel_size);
 
     FILE *image, *outputImage;
-    char add_char[80] = "./img_res/";
-    strcat(add_char, mask);
-    strcat(add_char, ".bmp");
-    printf("%s\n", add_char);
+    char output_path[100] = "./";
+    strcat(output_path, name_output);
+    strcat(output_path, ".bmp");
 
-    image = fopen(path, "rb");
-    if (image == NULL) {
-        fprintf(stderr, "Error: No se pudo abrir el archivo %s\n", path);
+    image = fopen(input_path, "rb");
+    outputImage = fopen(output_path, "wb");
+
+    if (!image || !outputImage) {
+        printf("Error abriendo archivos.\n");
         return;
     }
 
-    outputImage = fopen(add_char, "wb");
-    if (outputImage == NULL) {
-        fprintf(stderr, "Error: No se pudo crear el archivo %s\n", add_char);
-        fclose(image);
-        return;
-    }
-
-    // Leer cabecera
     unsigned char header[54];
-    for (int i = 0; i < 54; i++) {
-        header[i] = fgetc(image);
-        fputc(header[i], outputImage);
+    fread(header, sizeof(unsigned char), 54, image);
+    fwrite(header, sizeof(unsigned char), 54, outputImage);
+
+    int width = *(int*)&header[18];
+    int height = *(int*)&header[22];
+    int row_padded = (width * 3 + 3) & (~3);
+
+    unsigned char** input_rows = (unsigned char**)malloc(height * sizeof(unsigned char*));
+    unsigned char** output_rows = (unsigned char**)malloc(height * sizeof(unsigned char*));
+    unsigned char** temp_rows = (unsigned char**)malloc(height * sizeof(unsigned char*));
+
+    for (int i = 0; i < height; i++) {
+        input_rows[i] = (unsigned char*)malloc(row_padded);
+        output_rows[i] = (unsigned char*)malloc(row_padded);
+        temp_rows[i] = (unsigned char*)malloc(row_padded);
+        fread(input_rows[i], sizeof(unsigned char), row_padded, image);
     }
-
-    long tam = (long)header[4] * 65536 + (long)header[3] * 256 + (long)header[2];
-    long bpp = (long)header[29] * 256 + (long)header[28];
-    long ancho = (long)header[20] * 65536 + (long)header[19] * 256 + (long)header[18];
-    long alto = (long)header[24] * 65536 + (long)header[23] * 256 + (long)header[22];
-
-    printf("\n==========================\n");
-    printf("Tamaño archivo: %li\n", tam);
-    printf("Bits por pixel: %li\n", bpp);
-    printf("Largo img: %li\n", alto);
-    printf("Ancho img: %li\n", ancho);
-
-    // Asignar memoria para los píxeles RGB
-    unsigned char* r_in = (unsigned char*)malloc(ancho * alto);
-    unsigned char* g_in = (unsigned char*)malloc(ancho * alto);
-    unsigned char* b_in = (unsigned char*)malloc(ancho * alto);
-
-    if (!r_in || !g_in || !b_in) {
-        fprintf(stderr, "Error: No se pudo asignar memoria para canales de entrada.\n");
-        fclose(image);
-        fclose(outputImage);
-        return;
-    }
-
-    // Leer píxeles RGB
-    for (int i = 0; i < ancho * alto; i++) {
-        b_in[i] = fgetc(image);
-        g_in[i] = fgetc(image);
-        r_in[i] = fgetc(image);
-    }
-
-    // Aplicar blur por canal
-    unsigned char *r_out = malloc(ancho * alto);
-    unsigned char *g_out = malloc(ancho * alto);
-    unsigned char *b_out = malloc(ancho * alto);
 
     int k = kernel_size / 2;
 
-    for (int y = 0; y < alto; y++) {
-        // printf("Procesando fila %d de %li...\n", y, alto);
-        for (int x = 0; x < ancho; x++) {
-            int r_sum = 0, g_sum = 0, b_sum = 0, count = 0;
+    // Paso intermedio: desenfoque horizontal
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            int sumB = 0, sumG = 0, sumR = 0, count = 0;
 
-            for (int dy = -k; dy <= k; dy++) {
-                for (int dx = -k; dx <= k; dx++) {
-                    int nx = x + dx;
-                    int ny = y + dy;
-
-                    if (nx >= 0 && nx < ancho && ny >= 0 && ny < alto) {
-                        int idx = ny * ancho + nx;
-                        r_sum += r_in[idx];
-                        g_sum += g_in[idx];
-                        b_sum += b_in[idx];
-                        count++;
-                    }
+            for (int dx = -k; dx <= k; dx++) {
+                int nx = x + dx;
+                if (nx >= 0 && nx < width) {
+                    int idx = nx * 3;
+                    sumB += input_rows[y][idx + 0];
+                    sumG += input_rows[y][idx + 1];
+                    sumR += input_rows[y][idx + 2];
+                    count++;
                 }
             }
 
-            int idx = y * ancho + x;
-            r_out[idx] = r_sum / count;
-            g_out[idx] = g_sum / count;
-            b_out[idx] = b_sum / count;
+            int index = x * 3;
+            temp_rows[y][index + 0] = sumB / count;
+            temp_rows[y][index + 1] = sumG / count;
+            temp_rows[y][index + 2] = sumR / count;
+        }
+
+        // Copiar padding sin modificar
+        for (int p = width * 3; p < row_padded; p++) {
+            temp_rows[y][p] = input_rows[y][p];
         }
     }
 
-    // Escribir imagen de salida RGB
-    for (int i = 0; i < ancho * alto; i++) {
-        fputc(b_out[i], outputImage);
-        fputc(g_out[i], outputImage);
-        fputc(r_out[i], outputImage);
+    // Paso final: desenfoque vertical
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            int sumB = 0, sumG = 0, sumR = 0, count = 0;
+
+            for (int dy = -k; dy <= k; dy++) {
+                int ny = y + dy;
+                if (ny >= 0 && ny < height) {
+                    int idx = x * 3;
+                    sumB += temp_rows[ny][idx + 0];
+                    sumG += temp_rows[ny][idx + 1];
+                    sumR += temp_rows[ny][idx + 2];
+                    count++;
+                }
+            }
+
+            int index = x * 3;
+            output_rows[y][index + 0] = sumB / count;
+            output_rows[y][index + 1] = sumG / count;
+            output_rows[y][index + 2] = sumR / count;
+        }
+
+        // Copiar padding sin modificar
+        for (int p = width * 3; p < row_padded; p++) {
+            output_rows[y][p] = temp_rows[y][p];
+        }
     }
 
-
+    // Escritura final
+    for (int i = 0; i < height; i++) {
+        fwrite(output_rows[i], sizeof(unsigned char), row_padded, outputImage);
+        free(input_rows[i]);
+        free(temp_rows[i]);
+        free(output_rows[i]);
+    }
+  
     // Escritura en archivo de registro
     FILE *outputLog = fopen("output_log.txt", "a");
     if (outputLog == NULL) {
@@ -588,8 +590,9 @@ void desenfoque(char mask[10], char path[80], int kernel_size) {
     fprintf(outputLog, "-------------------------------------\n");
     fclose(outputLog);
 
-    free(r_in); free(g_in); free(b_in);
-    free(r_out); free(g_out); free(b_out);
+    free(input_rows);
+    free(temp_rows);
+    free(output_rows);
     fclose(image);
     fclose(outputImage);
 }
