@@ -6,7 +6,7 @@
 #include "selec_proc.h"
 #include <omp.h>
 
-#define NUM_IMAGES 100
+#define NUM_IMAGES 1
 #define INPUT_DIR "imagenes"    // Carpeta de entrada
 #define OUTPUT_DIR ""
 
@@ -100,7 +100,7 @@ int main() {
                     char out_file[50], in_file[50];
                     sprintf(in_file, "imagenes/%d.bmp", i);
                     sprintf(out_file, "desenfoque_%d.bmp", i);
-                    desenfoque(out_file, in_file, 55);
+                    desenfoque(in_file, out_file, 55);
                 }
             }
         }

@@ -470,15 +470,8 @@ void inv_img_color_vertical(char mask[10], char path[80]){
 }
 
 void desenfoque(const char* input_path, const char* name_output, int kernel_size) {
-    if (kernel_size < 55 || kernel_size > 155 || kernel_size % 2 == 0) {
-        printf("Kernel inválido. Debe ser impar y entre 55 y 155.\n");
-        return;
-    }
-
-    printf("\nAplicando blur con kernel %dx%d\n", kernel_size, kernel_size);
-
     FILE *image, *outputImage;
-    char output_path[100] = "./";
+    char output_path[100] = "./img_res/";
     strcat(output_path, name_output);
     strcat(output_path, ".bmp");
 
@@ -574,21 +567,6 @@ void desenfoque(const char* input_path, const char* name_output, int kernel_size
         free(temp_rows[i]);
         free(output_rows[i]);
     }
-  
-    // Escritura en archivo de registro
-    FILE *outputLog = fopen("output_log.txt", "a");
-    if (outputLog == NULL) {
-        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
-        fclose(image);
-        fclose(outputImage);
-        return;
-    }
-
-    fprintf(outputLog, "Función: %s\n", "desenfoque");
-    fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
-    fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
-    fprintf(outputLog, "-------------------------------------\n");
-    fclose(outputLog);
 
     free(input_rows);
     free(temp_rows);
