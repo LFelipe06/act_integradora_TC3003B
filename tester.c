@@ -6,7 +6,7 @@
 #include "selec_proc.h"
 #include <omp.h>
 
-#define NUM_IMAGES 50
+#define NUM_IMAGES 100
 #define INPUT_DIR "imagenes"    // Carpeta de entrada
 #define OUTPUT_DIR ""
 
@@ -21,7 +21,15 @@ int file_exists(const char *filename) {
 }
 
 int main() {
-    double start_time, end_time;
+    // Abrir el archivo de registro en modo "w" para vaciarlo
+    FILE *outputLog = fopen("output_log.txt", "w");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        return 1;
+    }
+    fclose(outputLog); // Cerrar el archivo inmediatamente después de vaciarlo
+
+    double start_time, end_time, total_time;
 
     start_time = omp_get_wtime();
     omp_set_num_threads(200);  
@@ -130,11 +138,28 @@ int main() {
 
     */
     
+    end_time = omp_get_wtime();
+    total_time = end_time - start_time;
+
     //printf("Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
     printf("Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
-    
-    end_time = omp_get_wtime();
 
-    printf("Tiempo de ejecución: %f segundos\n", end_time - start_time);
+    printf("Tiempo de ejecución: %f segundos\n", total_time);
+
+    long total_operations = NUM_IMAGES * 54; // 54 bytes de cabecera por imagen
+    for (int i = 0; i < NUM_IMAGES; i++) {
+        //  imagen ancho * alto píxeles
+        long ancho = 4928;
+        long alto = 3264;
+        total_operations += ancho * alto * 3; // 3 operaciones por píxel (RGB)
+    }
+
+    long total_instructions = total_operations * 20; // 20 instrucciones de ensamblador por operación
+    printf("Instrucciones totales ejecutadas: %ld\n", total_instructions);
+
+    double mips = total_instructions / (total_time * 1e6);
+    printf("MIPS ejecutados: %.2f\n", mips);
+
+
     return 0;
 }

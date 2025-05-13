@@ -4,6 +4,8 @@ bmps/
 # Ignorar la carpeta con las imágenes procesadas
 img_res/
 
+imagenes/
+
 # Ignorar cualquier otra carpeta de imágenes
 pngs/
 
