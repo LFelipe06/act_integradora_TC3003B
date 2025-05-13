@@ -1,24 +1,2048 @@
-Función: inv_img_color_horizontal
+Función: inv_img_color_horizontal, con imagenes/0.bmp
 Localidades totales leídas: 16084992
 Localidades totales escritas: 16084992
 -------------------------------------
-Función: invert_img_grey_horizontal
+Función: invert_img_grey_horizontal, con imagenes/0.bmp
 Localidades totales leídas: 16084992
 Localidades totales escritas: 16084992
 -------------------------------------
-Función: gray_img
+Función: gray_img, con imagenes/0.bmp
 Localidades totales leídas: 16084992
 Localidades totales escritas: 16084992
 -------------------------------------
-Función: inv_img_grey_vertical
+Función: inv_img_color_vertical, con imagenes/0.bmp
 Localidades totales leídas: 16084992
 Localidades totales escritas: 16084992
 -------------------------------------
-Función: inv_img_color_vertical
+Función: inv_img_grey_vertical, con imagenes/0.bmp
 Localidades totales leídas: 16084992
 Localidades totales escritas: 16084992
 -------------------------------------
-Función: desenfoque
+Función: inv_img_color_horizontal, con imagenes/1.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/1.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/1.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/1.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/1.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/2.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/2.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/2.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/2.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/2.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/3.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/3.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/4.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/3.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/3.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/3.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/4.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/5.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/4.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/4.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/4.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/5.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/6.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/5.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/6.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/5.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/5.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/7.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/7.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/6.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/6.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/8.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/6.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/8.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/7.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/9.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/7.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/7.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/0.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/8.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/9.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/10.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/8.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/8.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/9.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/11.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/10.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/9.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/9.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/10.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/12.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/11.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/10.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/10.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/11.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/13.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/12.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/11.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/11.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/14.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/12.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/13.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/15.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/12.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/12.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/13.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/14.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/16.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/13.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/15.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/13.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/14.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/17.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/16.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/14.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/14.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/15.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/18.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/17.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/15.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/15.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/16.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/19.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/1.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/18.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/16.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/20.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/16.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/17.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/19.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/21.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/17.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/17.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/20.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/18.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/22.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/18.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/21.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/18.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/19.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/23.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/22.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/19.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/20.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/19.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/24.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/23.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/20.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/25.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/21.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/20.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/24.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/21.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/26.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/22.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/21.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/25.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/27.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/22.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/23.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/22.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/26.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/28.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/23.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/24.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/23.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/29.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/27.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/2.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/25.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/24.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/30.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/24.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/28.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/26.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/25.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/31.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/25.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/29.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/27.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/26.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/32.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/30.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/26.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/28.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/33.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/31.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/27.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/29.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/27.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/34.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/30.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/32.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/28.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/28.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/35.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/31.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/33.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/36.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/29.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/29.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/32.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/34.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/37.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/33.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/35.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/38.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/30.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/30.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/34.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/36.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/39.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/3.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/35.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/31.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/31.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/37.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/40.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/36.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/38.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/41.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/37.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/32.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/32.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/42.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/39.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/38.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/43.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/39.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/40.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/33.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/33.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/44.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/40.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/41.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/41.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/45.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/34.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/42.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/34.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/42.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/46.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/43.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/35.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/35.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/43.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/47.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/44.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/44.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/48.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/36.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/36.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/4.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/45.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/49.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/45.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/37.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/37.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/50.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/46.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/38.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/46.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/38.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/51.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/47.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/47.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/39.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/39.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/52.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/48.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/48.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/40.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/40.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/53.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/49.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/49.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/41.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/50.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/54.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/41.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/50.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/42.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/51.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/55.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/42.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/51.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/43.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/52.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/56.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/43.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/52.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/53.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/44.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/57.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/44.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/54.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/53.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/45.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/58.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/5.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/55.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/45.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/59.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/46.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/54.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/56.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/60.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/47.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/46.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/55.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/57.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/61.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/48.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/58.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/47.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/56.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/62.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/49.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/59.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/48.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/63.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/57.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/50.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/60.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/64.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/58.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/49.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/61.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/51.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/65.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/59.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/62.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/52.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/50.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/66.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/63.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/60.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/53.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/51.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/67.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/64.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/54.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/61.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/68.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/65.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/6.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/52.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/55.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/62.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/69.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/66.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/56.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/53.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/70.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/63.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/67.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/57.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/71.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/54.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/68.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/64.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/58.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/72.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/69.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/55.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/65.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/73.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/59.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/70.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/56.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/66.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/74.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/60.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/71.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/57.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/67.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/75.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/61.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/72.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/76.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/58.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/68.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/62.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/73.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/77.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/7.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/69.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/59.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/63.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/74.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/78.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/70.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/60.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/64.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/79.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/75.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/71.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/80.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/76.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/65.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/61.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/81.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/72.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/77.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/66.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/62.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/82.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/78.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/73.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/67.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/63.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/83.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/79.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/68.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/74.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/84.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/80.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/64.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/69.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/75.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/85.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/81.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/70.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/65.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/86.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/8.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/76.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/82.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/71.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/87.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/66.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/77.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/83.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/72.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/88.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/67.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/84.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/78.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/73.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/89.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/68.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/85.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/79.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/90.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/74.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/69.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/86.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/91.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/80.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/75.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/70.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/87.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/92.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/76.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/81.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/71.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/88.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/9.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/77.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/82.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/89.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/72.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/78.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/83.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/90.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/73.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/79.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/91.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/84.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/74.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/92.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/80.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/85.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/75.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/81.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/86.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/76.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/82.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/87.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/77.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/10.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/83.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/88.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/78.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/84.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/89.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/79.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/85.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/90.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/80.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/93.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/93.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/86.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/91.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/81.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/94.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/94.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/87.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/92.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/82.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/95.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/95.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/88.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/11.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/83.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/93.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/96.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/89.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/96.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/94.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/84.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/90.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/97.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/97.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/85.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/95.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/91.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/98.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/98.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/86.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/92.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/96.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_horizontal, con imagenes/99.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_color_vertical, con imagenes/99.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/87.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/93.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/97.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/88.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/94.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/98.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/12.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/89.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/95.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: invert_img_grey_horizontal, con imagenes/99.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/90.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/96.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/91.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/97.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/92.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/98.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/93.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: inv_img_grey_vertical, con imagenes/99.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/94.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/95.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: desenfoque, con imagenes/13.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/96.bmp
+Localidades totales leídas: 16084992
+Localidades totales escritas: 16084992
+-------------------------------------
+Función: gray_img, con imagenes/97.bmp
 Localidades totales leídas: 16084992
 Localidades totales escritas: 16084992
 -------------------------------------

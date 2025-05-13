@@ -104,7 +104,7 @@ void gray_img(char mask[10], char path[80]) {
         return;
     }
 
-    fprintf(outputLog, "Función: %s\n", "gray_img");
+    fprintf(outputLog, "Función: gray_img, con %s\n", path);
     fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
     fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
     fprintf(outputLog, "-------------------------------------\n");
@@ -186,7 +186,7 @@ void inv_img_grey_horizontal(char mask[10], char path[80]) {
         return;
     }
 
-    fprintf(outputLog, "Función: %s\n", "invert_img_grey_horizontal");
+    fprintf(outputLog, "Función: invert_img_grey_horizontal, con %s\n", path);
     fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
     fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
     fprintf(outputLog, "-------------------------------------\n");
@@ -272,7 +272,7 @@ void inv_img_grey_vertical(char mask[10], char path[80]) {
         return;
     }
 
-    fprintf(outputLog, "Función: %s\n", "inv_img_grey_vertical");
+    fprintf(outputLog, "Función: inv_img_grey_vertical, con %s\n", path);
     fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
     fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
     fprintf(outputLog, "-------------------------------------\n");
@@ -343,7 +343,7 @@ void inv_img_color_horizontal(char mask[10], char path[80]){
         return;
     }
 
-    fprintf(outputLog, "Función: %s\n", "inv_img_color_horizontal");
+    fprintf(outputLog, "Función: inv_img_color_horizontal, con %s\n", path);
     fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
     fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
     fprintf(outputLog, "-------------------------------------\n");
@@ -423,7 +423,7 @@ void inv_img_color_vertical(char mask[10], char path[80]){
         return;
     }
 
-    fprintf(outputLog, "Función: %s\n", "inv_img_color_vertical");
+    fprintf(outputLog, "Función: inv_img_color_vertical, con %s\n", path);
     fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
     fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
     fprintf(outputLog, "-------------------------------------\n");
@@ -545,7 +545,7 @@ void desenfoque(const char* input_path, const char* name_output, int kernel_size
         return;
     }
 
-    fprintf(outputLog, "Función: %s\n", "desenfoque");
+    fprintf(outputLog, "Función: desenfoque, con %s\n", input_path);
     fprintf(outputLog, "Localidades totales leídas: %d\n", width * height);
     fprintf(outputLog, "Localidades totales escritas: %d\n", width * height);
     fprintf(outputLog, "-------------------------------------\n");
