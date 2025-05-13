@@ -7,7 +7,7 @@ source_file = 'prueba1.bmp'  # Replace with your actual file path
 output_prefix = 'output_'
 
 # Duplicate the file 100 times
-for i in range(10):
+for i in range(100):
     output_filename = f'{i}.bmp'
     shutil.copy(source_file, output_filename)
 

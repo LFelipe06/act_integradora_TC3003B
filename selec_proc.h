@@ -59,24 +59,15 @@ void gray_img(char mask[10], char path[80]) {
         return;
     }
 
-    // Leer cabecera
     unsigned char xx[54];
     for (int i = 0; i < 54; i++) {
         xx[i] = fgetc(image);
         fputc(xx[i], outputImage);
     }
 
-    long tam = (long)xx[4] * 65536 + (long)xx[3] * 256 + (long)xx[2];
-    long bpp = (long)xx[29] * 256 + (long)xx[28];
     long ancho = (long)xx[20] * 65536 + (long)xx[19] * 256 + (long)xx[18];
     long alto = (long)xx[24] * 65536 + (long)xx[23] * 256 + (long)xx[22];
 
-    printf("Tamaño archivo: %li\n", tam);
-    printf("Bits por pixel: %li\n", bpp);
-    printf("Largo img: %li\n", alto);
-    printf("Ancho img: %li\n", ancho);
-
-    // Asignar memoria para los píxeles
     unsigned char* arr_in = (unsigned char*)malloc(ancho * alto * sizeof(unsigned char));
     if (arr_in == NULL) {
         fprintf(stderr, "Error: No se pudo asignar memoria para arr_in.\n");
@@ -85,7 +76,6 @@ void gray_img(char mask[10], char path[80]) {
         return;
     }
 
-    // Leer píxeles
     int j = 0;
     unsigned char r, g, b, pixel;
     while (j < ancho * alto && !feof(image)) {
@@ -98,17 +88,34 @@ void gray_img(char mask[10], char path[80]) {
         j++;
     }
 
-    // Escribir píxeles (esta es la parte que debes modificar)
+    // Escribir imagen de salida en escala de grises
     for (int i = 0; i < ancho * alto; i++) {
         fputc(arr_in[i], outputImage); // Blue
         fputc(arr_in[i], outputImage); // Green
         fputc(arr_in[i], outputImage); // Red
     }
 
+    // Escritura en archivo de registro
+    FILE *outputLog = fopen("output_log.txt", "a");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        free(arr_in);
+        fclose(image);
+        fclose(outputImage);
+        return;
+    }
+
+    fprintf(outputLog, "Función: %s\n", "gray_img");
+    fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
+    fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
+    fprintf(outputLog, "-------------------------------------\n");
+    fclose(outputLog);
+
     free(arr_in);
     fclose(image);
     fclose(outputImage);
 }
+
 
 void inv_img_grey_horizontal(char mask[10], char path[80]) {
     FILE *image, *outputImage;
@@ -176,6 +183,22 @@ void inv_img_grey_horizontal(char mask[10], char path[80]) {
         fputc(arr_in[(ancho * alto) - i - 1], outputImage);
     }
 
+    // Escritura en archivo de registro
+    FILE *outputLog = fopen("output_log.txt", "a");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        free(arr_in);
+        fclose(image);
+        fclose(outputImage);
+        return;
+    }
+
+    fprintf(outputLog, "Función: %s\n", "invert_img_grey_horizontal");
+    fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
+    fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
+    fprintf(outputLog, "-------------------------------------\n");
+    fclose(outputLog);
+
     free(arr_in);
     fclose(image);
     fclose(outputImage);
@@ -240,7 +263,6 @@ void inv_img_grey_vertical(char mask[10], char path[80]) {
         j++;
     }
 
-
     // Inversión Vertical 
     for(int y = 0; y < alto; y++) {
         for(int x = 0; x < ancho; x++) {
@@ -252,6 +274,22 @@ void inv_img_grey_vertical(char mask[10], char path[80]) {
             fputc(arr_in[flipped_pos], outputImage);
         }
     }
+
+    // Escritura en archivo de registro
+    FILE *outputLog = fopen("output_log.txt", "a");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        free(arr_in);
+        fclose(image);
+        fclose(outputImage);
+        return;
+    }
+
+    fprintf(outputLog, "Función: %s\n", "inv_img_grey_vertical");
+    fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
+    fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
+    fprintf(outputLog, "-------------------------------------\n");
+    fclose(outputLog);
 
     free(arr_in);
     fclose(image);
@@ -318,6 +356,21 @@ void inv_img_color_horizontal(char mask[10], char path[80]){
         fputc(arr_in_g[(ancho * alto) - i - 1], outputImage);
         fputc(arr_in_r[(ancho * alto) - i - 1], outputImage);
     }
+
+    // Escritura en archivo de registro
+    FILE *outputLog = fopen("output_log.txt", "a");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        fclose(image);
+        fclose(outputImage);
+        return;
+    }
+
+    fprintf(outputLog, "Función: %s\n", "inv_img_color_horizontal");
+    fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
+    fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
+    fprintf(outputLog, "-------------------------------------\n");
+    fclose(outputLog);
     
     free(arr_in_b);
     free(arr_in_g);
@@ -391,6 +444,23 @@ void inv_img_color_vertical(char mask[10], char path[80]){
             fputc(arr_in_r[flipped_pos], outputImage);
         }
     }
+
+
+    // Escritura en archivo de registro
+    FILE *outputLog = fopen("output_log.txt", "a");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        fclose(image);
+        fclose(outputImage);
+        return;
+    }
+
+    fprintf(outputLog, "Función: %s\n", "inv_img_color_vertical");
+    fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
+    fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
+    fprintf(outputLog, "-------------------------------------\n");
+    fclose(outputLog);
+
     free(arr_in_b);
     free(arr_in_g);
     free(arr_in_r);
@@ -504,6 +574,21 @@ void desenfoque(const char* input_path, const char* name_output, int kernel_size
         free(temp_rows[i]);
         free(output_rows[i]);
     }
+  
+    // Escritura en archivo de registro
+    FILE *outputLog = fopen("output_log.txt", "a");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        fclose(image);
+        fclose(outputImage);
+        return;
+    }
+
+    fprintf(outputLog, "Función: %s\n", "desenfoque");
+    fprintf(outputLog, "Localidades totales leídas: %ld\n", ancho * alto);
+    fprintf(outputLog, "Localidades totales escritas: %ld\n", ancho * alto);
+    fprintf(outputLog, "-------------------------------------\n");
+    fclose(outputLog);
 
     free(input_rows);
     free(temp_rows);
