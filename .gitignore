@@ -2,7 +2,10 @@
 bmps/
 
 # Ignorar la carpeta con las imágenes procesadas
-img_res/
+img_res/*
+
+# Ingora las imagenes de la carpeta, y conserva el .gitkeep
+!img_res/.gitkeep
 
 imagenes/
 
@@ -16,3 +19,4 @@ pngs/
 *.o
 *.out
 *.exe
+

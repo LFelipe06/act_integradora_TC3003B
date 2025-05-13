@@ -44,7 +44,6 @@ void gray_img(char mask[10], char path[80]) {
     char add_char[80] = "./img_res/";
     strcat(add_char, mask);
     strcat(add_char, ".bmp");
-    printf("%s\n", add_char);
 
     image = fopen(path, "rb");
     if (image == NULL) {
@@ -122,7 +121,6 @@ void inv_img_grey_horizontal(char mask[10], char path[80]) {
     char add_char[80] = "./img_res/";
     strcat(add_char, mask);
     strcat(add_char, ".bmp");
-    printf("%s\n", add_char);
 
     image = fopen(path, "rb");
     if (image == NULL) {
@@ -148,11 +146,6 @@ void inv_img_grey_horizontal(char mask[10], char path[80]) {
     long bpp = (long)xx[29] * 256 + (long)xx[28];
     long ancho = (long)xx[20] * 65536 + (long)xx[19] * 256 + (long)xx[18];
     long alto = (long)xx[24] * 65536 + (long)xx[23] * 256 + (long)xx[22];
-
-    printf("Tamaño archivo: %li\n", tam);
-    printf("Bits por pixel: %li\n", bpp);
-    printf("Largo img: %li\n", alto);
-    printf("Ancho img: %li\n", ancho);
 
     // Asignar memoria para los píxeles
     unsigned char* arr_in = (unsigned char*)malloc(ancho * alto * sizeof(unsigned char));
@@ -209,7 +202,6 @@ void inv_img_grey_vertical(char mask[10], char path[80]) {
     char add_char[80] = "./img_res/";
     strcat(add_char, mask);
     strcat(add_char, ".bmp");
-    printf("%s\n", add_char);
 
     image = fopen(path, "rb");
     if (image == NULL) {
@@ -235,11 +227,6 @@ void inv_img_grey_vertical(char mask[10], char path[80]) {
     long bpp = (long)xx[29] * 256 + (long)xx[28];
     long ancho = (long)xx[20] * 65536 + (long)xx[19] * 256 + (long)xx[18];
     long alto = (long)xx[24] * 65536 + (long)xx[23] * 256 + (long)xx[22];
-
-    printf("Tamaño archivo: %li\n", tam);
-    printf("Bits por pixel: %li\n", bpp);
-    printf("Largo img: %li\n", alto);
-    printf("Ancho img: %li\n", ancho);
 
     // Asignar memoria para los píxeles
     unsigned char* arr_in = (unsigned char*)malloc(ancho * alto * sizeof(unsigned char));
@@ -303,7 +290,6 @@ void inv_img_color_horizontal(char mask[10], char path[80]){
     char add_char[80] = "./img_res/";
     strcat(add_char, mask);
     strcat(add_char, ".bmp");
-    printf("%s\n", add_char);
     image = fopen(path,"rb");          //Original Image
     outputImage = fopen(add_char,"wb");
 
@@ -322,11 +308,7 @@ void inv_img_color_horizontal(char mask[10], char path[80]){
     bpp = (long)xx[29]*256+(long)xx[28];
     ancho = (long)xx[20]*65536+(long)xx[19]*256+(long)xx[18];
     alto = (long)xx[24]*65536+(long)xx[23]*256+(long)xx[22];
-    printf("tamano archivo %li\n", tam);
     tam1 = tam;
-    printf("bits por pixel %li\n", bpp);
-    printf("largo img %li\n",alto);
-    printf("ancho img %li\n",ancho);
 
     unsigned char* arr_in_b = (unsigned char*)malloc(ancho*alto*sizeof(unsigned char));
     unsigned char* arr_in_g = (unsigned char*)malloc(ancho*alto*sizeof(unsigned char));
@@ -344,11 +326,6 @@ void inv_img_color_horizontal(char mask[10], char path[80]){
         arr_in_r[j] = r;
         j++;
     }
-
-    printf("lectura de datos: %d\n", j * 3);
-    printf("elementos faltantes: %d\n", tam1 - (j * 3));
-    printf("\n");
-
 
     // Escribir píxeles invertidos
     for (int i = 0; i < ancho * alto; i++) {
@@ -387,7 +364,6 @@ void inv_img_color_vertical(char mask[10], char path[80]){
     char add_char[80] = "./img_res/";
     strcat(add_char, mask);
     strcat(add_char, ".bmp");
-    printf("%s\n", add_char);
     image = fopen(path,"rb");          //Original Image
     outputImage = fopen(add_char,"wb");
 
@@ -406,11 +382,7 @@ void inv_img_color_vertical(char mask[10], char path[80]){
     bpp = (long)xx[29]*256+(long)xx[28];
     ancho = (long)xx[20]*65536+(long)xx[19]*256+(long)xx[18];
     alto = (long)xx[24]*65536+(long)xx[23]*256+(long)xx[22];
-    printf("tamano archivo %li\n", tam);
     tam1 = tam;
-    printf("bits por pixel %li\n", bpp);
-    printf("largo img %li\n",alto);
-    printf("ancho img %li\n",ancho);
 
     unsigned char* arr_in_b = (unsigned char*)malloc(ancho*alto*sizeof(unsigned char));
     unsigned char* arr_in_g = (unsigned char*)malloc(ancho*alto*sizeof(unsigned char));
@@ -428,10 +400,6 @@ void inv_img_color_vertical(char mask[10], char path[80]){
         arr_in_r[j] = r;
         j++;
     }
-
-    printf("lectura de datos: %d\n", j * 3);
-    printf("elementos faltantes: %d\n", tam1 - (j * 3));
-    printf("\n");
     
     // Inversión Vertical 
     for(int y = 0; y < alto; y++) {
@@ -567,6 +535,21 @@ void desenfoque(const char* input_path, const char* name_output, int kernel_size
         free(temp_rows[i]);
         free(output_rows[i]);
     }
+
+    // Escritura en archivo de registro
+    FILE *outputLog = fopen("output_log.txt", "a");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        fclose(image);
+        fclose(outputImage);
+        return;
+    }
+
+    fprintf(outputLog, "Función: %s\n", "desenfoque");
+    fprintf(outputLog, "Localidades totales leídas: %d\n", width * height);
+    fprintf(outputLog, "Localidades totales escritas: %d\n", width * height);
+    fprintf(outputLog, "-------------------------------------\n");
+    fclose(outputLog);
 
     free(input_rows);
     free(temp_rows);

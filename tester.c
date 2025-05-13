@@ -21,6 +21,19 @@ int file_exists(const char *filename) {
 }
 
 int main() {
+
+    // Crear la carpeta "img_res/" si no existe
+    struct stat st = {0};
+    if (stat("img_res", &st) == -1) {
+        if (mkdir("img_res", 0700) != 0) {
+            fprintf(stderr, "Error: No se pudo crear la carpeta 'img_res/'.\n");
+            return 1;
+        }
+        printf("Carpeta 'img_res/' creada exitosamente.\n");
+    } else {
+        printf("Carpeta 'img_res/' ya existe.\n");
+    }
+
     // Abrir el archivo de registro en modo "w" para vaciarlo
     FILE *outputLog = fopen("output_log.txt", "w");
     if (outputLog == NULL) {
