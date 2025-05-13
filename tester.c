@@ -92,7 +92,7 @@ int main() {
                     char out_file[50], in_file[50];
                     sprintf(in_file, "imagenes/%d.bmp", i);
                     sprintf(out_file, "desenfoque_%d.bmp", i);
-                    desenfoque(out_file, in_file, 11);
+                    desenfoque(out_file, in_file, 55);
                 }
             }
         }
