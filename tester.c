@@ -6,7 +6,7 @@
 #include "selec_proc.h"
 #include <omp.h>
 
-#define NUM_IMAGES 100
+#define NUM_IMAGES 10
 #define OUTPUT_DIR ""
 
 // Función para verificar si un archivo existe
@@ -44,7 +44,7 @@ int main() {
     double start_time, end_time, total_time;
 
     start_time = omp_get_wtime();
-    omp_set_num_threads(200);  
+    omp_set_num_threads(18);  
 
     #pragma omp parallel
     {
@@ -139,6 +139,16 @@ int main() {
 
     double mips = total_instructions / (total_time * 1e6);
     printf("MIPS ejecutados: %.2f\n", mips);
+
+    // Calcular el número total de bytes procesados
+    long total_bytes = NUM_IMAGES * 54; // 54 bytes de cabecera por imagen
+    for (int i = 0; i < NUM_IMAGES; i++) {
+        total_bytes += 4928 * 3264 * 3; // Ancho * Alto * 3 bytes por píxel (RGB)
+    }
+
+    // Calcular la tasa de bytes promedio
+    double avg_byte_rate = total_bytes / total_time;
+    printf("Tasa de bytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
 
 
     return 0;
