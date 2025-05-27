@@ -6,8 +6,18 @@
 #include "selec_proc.h"
 #include <omp.h>
 
-#define NUM_IMAGES 10
+#define NUM_IMAGES 100
 #define OUTPUT_DIR ""
+// Define los rangos para dividir 100 imágenes en 3 bloques
+#define BLOCK1_START 0
+#define BLOCK1_END 32
+
+#define BLOCK2_START 33
+#define BLOCK2_END 65
+
+#define BLOCK3_START 66
+#define BLOCK3_END 99
+
 
 // Función para verificar si un archivo existe
 int file_exists(const char *filename) {
@@ -50,10 +60,10 @@ int main() {
     {
         #pragma omp sections
         {
+            // === Bloque 1 ===
             #pragma omp section
             {
-                printf("[Tarea 1] Inversión gris horizontal\n");
-                for (int i = 0; i < NUM_IMAGES; i++) {
+                for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
                     char out_file[50], in_file[50];
                     sprintf(in_file, "imagenes/%d.bmp", i);
                     sprintf(out_file, "inv_grey_horizontal_%d.bmp", i);
@@ -63,8 +73,7 @@ int main() {
 
             #pragma omp section
             {
-                printf("[Tarea 2] Inversión gris vertical\n");
-                for (int i = 0; i < NUM_IMAGES; i++) {
+                for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
                     char out_file[50], in_file[50];
                     sprintf(in_file, "imagenes/%d.bmp", i);
                     sprintf(out_file, "inv_grey_vertical_%d.bmp", i);
@@ -74,8 +83,7 @@ int main() {
 
             #pragma omp section
             {
-                printf("[Tarea 3] Inversión color horizontal\n");
-                for (int i = 0; i < NUM_IMAGES; i++) {
+                for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
                     char out_file[50], in_file[50];
                     sprintf(in_file, "imagenes/%d.bmp", i);
                     sprintf(out_file, "inv_color_horizontal_%d.bmp", i);
@@ -85,8 +93,7 @@ int main() {
 
             #pragma omp section
             {
-                printf("[Tarea 4] Inversión color vertical\n");
-                for (int i = 0; i < NUM_IMAGES; i++) {
+                for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
                     char out_file[50], in_file[50];
                     sprintf(in_file, "imagenes/%d.bmp", i);
                     sprintf(out_file, "inv_color_vertical_%d.bmp", i);
@@ -96,8 +103,7 @@ int main() {
 
             #pragma omp section
             {
-                printf("[Tarea 5] Conversión a grises\n");
-                for (int i = 0; i < NUM_IMAGES; i++) {
+                for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
                     char out_file[50], in_file[50];
                     sprintf(in_file, "imagenes/%d.bmp", i);
                     sprintf(out_file, "grey_%d.bmp", i);
@@ -107,12 +113,133 @@ int main() {
 
             #pragma omp section
             {
-                printf("[Tarea 6] Desenfoque\n");
-                for (int i = 0; i < NUM_IMAGES; i++) {
+                for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
                     char out_file[50], in_file[50];
                     sprintf(in_file, "imagenes/%d.bmp", i);
                     sprintf(out_file, "desenfoque_%d.bmp", i);
-                    desenfoque(in_file, out_file, 155);
+                    desenfoque(in_file, out_file, 55);
+                }
+            }
+
+            // === Bloque 2 ===
+            #pragma omp section
+            {
+                for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "inv_grey_horizontal_%d.bmp", i);
+                    inv_img_grey_horizontal(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "inv_grey_vertical_%d.bmp", i);
+                    inv_img_grey_vertical(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "inv_color_horizontal_%d.bmp", i);
+                    inv_img_color_horizontal(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "inv_color_vertical_%d.bmp", i);
+                    inv_img_color_vertical(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "grey_%d.bmp", i);
+                    gray_img(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "desenfoque_%d.bmp", i);
+                    desenfoque(in_file, out_file, 55);
+                }
+            }
+
+            // === Bloque 3 ===
+            #pragma omp section
+            {
+                for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "inv_grey_horizontal_%d.bmp", i);
+                    inv_img_grey_horizontal(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "inv_grey_vertical_%d.bmp", i);
+                    inv_img_grey_vertical(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "inv_color_horizontal_%d.bmp", i);
+                    inv_img_color_horizontal(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "inv_color_vertical_%d.bmp", i);
+                    inv_img_color_vertical(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "grey_%d.bmp", i);
+                    gray_img(out_file, in_file);
+                }
+            }
+
+            #pragma omp section
+            {
+                for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    char out_file[50], in_file[50];
+                    sprintf(in_file, "imagenes/%d.bmp", i);
+                    sprintf(out_file, "desenfoque_%d.bmp", i);
+                    desenfoque(in_file, out_file, 55);
                 }
             }
         }
