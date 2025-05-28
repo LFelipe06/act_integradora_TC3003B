@@ -6,7 +6,7 @@
 #include "selec_proc.h"
 #include <omp.h>
 
-#define NUM_IMAGES 5
+#define NUM_IMAGES 100
 #define OUTPUT_DIR ""
 // Define los rangos para dividir 100 imágenes en 3 bloques
 #define BLOCK1_START 0
@@ -335,7 +335,7 @@ int main() {
                 }
             #pragma omp section
                 if (cfg.grayscale){
-                    for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "grey_%d.bmp", i);
@@ -404,9 +404,9 @@ int main() {
     end_time = omp_get_wtime();
     total_time = end_time - start_time;
 
-    //printf("Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
+    printf("Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
 
-    //printf("Tiempo de ejecución: %f segundos\n", total_time);
+    printf("Tiempo de ejecución: %f segundos\n", total_time);
 
     long total_operations = NUM_IMAGES * 54; // 54 bytes de cabecera por imagen
     for (int i = 0; i < NUM_IMAGES; i++) {
@@ -417,10 +417,10 @@ int main() {
     }
 
     long total_instructions = total_operations * 20; // 20 instrucciones de ensamblador por operación
-    //printf("Instrucciones totales ejecutadas: %ld\n", total_instructions);
+    printf("Instrucciones totales ejecutadas: %ld\n", total_instructions);
 
     double mips = total_instructions / (total_time * 1e6);
-    //printf("MIPS ejecutados: %.2f\n", mips);
+    printf("MIPS ejecutados: %.2f\n", mips);
 
     // Calcular el número total de bytes procesados
     long total_bytes = NUM_IMAGES * 54; // 54 bytes de cabecera por imagen
@@ -430,7 +430,7 @@ int main() {
 
     // Calcular la tasa de bytes promedio
     double avg_byte_rate = total_bytes / total_time;
-    //printf("Tasa de bytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
+    printf("Tasa de bytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
 
 
     return 0;

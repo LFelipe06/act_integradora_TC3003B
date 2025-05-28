@@ -45,7 +45,7 @@ class ImageProcessorGUI(QMainWindow):
         self.setGeometry(200, 200, 1000, 600)
 
         self.input_folder = ""
-        self.output_folder = "carpeta_salida"
+        self.output_folder = "img_res"
         self.processing_thread = None
 
         self.init_ui()
@@ -53,7 +53,7 @@ class ImageProcessorGUI(QMainWindow):
     def init_ui(self):
         menu_bar = self.menuBar()
         dev_menu = menu_bar.addMenu("Desarrolladores")
-        for dev in ["Juan Pérez", "Ana Gómez", "Luis Martínez"]:
+        for dev in ["Erwin Porras", "Emilio Flamenco", "Felipe Hernandez"]:
             dev_menu.addAction(QAction(dev, self))
 
         widget = QWidget()
@@ -158,6 +158,14 @@ class ImageProcessorGUI(QMainWindow):
         self.report_label.setStyleSheet("font-size: 12px;")
         right_layout.addWidget(self.report_label)
 
+        # Vista previa de la imagen de salida
+        self.output_preview_label = QLabel()
+        self.output_preview_label.setFixedSize(200, 200)
+        self.output_preview_label.setAlignment(Qt.AlignCenter)
+        self.output_preview_label.setStyleSheet("border: 1px solid #aaa; background: #fafafa;")
+        self.output_preview_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        right_layout.addWidget(self.output_preview_label)
+
         right_layout.addStretch()
         main_layout.addLayout(right_layout, 1)
 
@@ -170,6 +178,9 @@ class ImageProcessorGUI(QMainWindow):
 
         self.tester_process = QProcess(self)
         self.tester_process.finished.connect(self.processing_finished)
+
+        # Conecta la señal de selección de la lista de salida
+        self.output_list.itemClicked.connect(self.show_output_thumbnail)
 
     def setup_icon_view(self, list_widget):
         list_widget.setViewMode(QListWidget.IconMode)
@@ -191,7 +202,7 @@ class ImageProcessorGUI(QMainWindow):
 
     def update_output_list(self):
         self.output_list.clear()
-        self._load_images_to_list(self.output_folder, self.output_list)
+        self._load_images_to_list_name(self.output_folder, self.output_list)
 
     def _load_images_to_list(self, folder, list_widget):
         list_widget.clear()
@@ -208,6 +219,19 @@ class ImageProcessorGUI(QMainWindow):
                     list_widget.addItem(item)
                 else:
                     list_widget.addItem(QListWidgetItem(f"[ERROR] {f}"))
+            if not files:
+                list_widget.addItem("No se encontraron imágenes BMP.")
+        except Exception as e:
+            list_widget.addItem(f"Error al leer la carpeta: {e}")
+
+    def _load_images_to_list_name(self, folder, list_widget):
+        list_widget.clear()
+        valid_extensions = (".bmp",)
+        try:
+            files = [f for f in os.listdir(folder)
+                    if f.lower().endswith(valid_extensions) and os.path.isfile(os.path.join(folder, f))]
+            for f in files:
+                list_widget.addItem(f)  # Solo agrega el nombre del archivo
             if not files:
                 list_widget.addItem("No se encontraron imágenes BMP.")
         except Exception as e:
@@ -263,12 +287,24 @@ class ImageProcessorGUI(QMainWindow):
         QTimer.singleShot(0, self.processing_finished)
 
     def processing_finished(self):
-        self.progress_timer.stop()
-        self.process_btn.setEnabled(True)
-        self.progress_bar.setValue(100)
-        self.update_output_list()
-        self.generate_report()
-        self.display_report()
+        total = self.get_total_expected_operations()
+        count = 0
+        try:
+            with open("progress.txt", "r") as f:
+                count = f.read().count('1')
+        except Exception:
+            pass
+
+        if count >= total:
+            self.progress_timer.stop()
+            self.process_btn.setEnabled(True)
+            self.progress_bar.setValue(100)
+            self.update_output_list()
+            self.generate_report()
+            self.display_report()
+        else:
+            # Si no ha terminado, espera y vuelve a intentar
+            QTimer.singleShot(100, self.processing_finished)
 
     def generate_report(self):
         try:
@@ -353,6 +389,25 @@ class ImageProcessorGUI(QMainWindow):
             self.progress_bar.setValue(min(percent, 100))
         except Exception:
             self.progress_bar.setValue(0)
+
+    def show_output_thumbnail(self, item):
+        filename = item.text()
+        if filename.lower().endswith(".bmp"):
+            path = os.path.join(self.output_folder, filename)
+            pixmap = QPixmap(path)
+            if not pixmap.isNull():
+                # Obtén el tamaño actual del QLabel
+                label_width = self.output_preview_label.width()
+                label_height = self.output_preview_label.height()
+                # Escala la imagen manteniendo proporciones y sin exceder el QLabel
+                scaled = pixmap.scaled(label_width, label_height, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                self.output_preview_label.setPixmap(scaled)
+                self.output_preview_label.setText("")  # Limpia texto previo
+            else:
+                self.output_preview_label.setText("No se pudo cargar la imagen.")
+                self.output_preview_label.setPixmap(QPixmap())
+        else:
+            self.output_preview_label.clear()
 
 
 if __name__ == "__main__":
