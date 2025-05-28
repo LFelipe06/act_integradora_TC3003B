@@ -5,6 +5,7 @@
 #include <sys/types.h>
 #include "selec_proc.h"
 #include <omp.h>
+#include <mpi.h>
 
 #define NUM_IMAGES 100
 #define OUTPUT_DIR ""
@@ -61,7 +62,11 @@ int parse_config(Config *cfg, const char *filename) {
     return 1;
 }
 
-int main() {
+int main(int argc, char** argv) {
+
+    int myrank;
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &myrank);
 
     // Vaciar el archivo progress.txt al inicio
     FILE *progress = fopen("progress.txt", "w");
@@ -109,7 +114,7 @@ int main() {
         #pragma omp sections
         {
             #pragma omp section
-            if (cfg.gray_flip_h){
+            if (cfg.gray_flip_h && myrank == 1){
                 {
                     for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
                         char out_file[500], in_file[500];
@@ -126,7 +131,7 @@ int main() {
                     }
                 }}
             #pragma omp section
-                if (cfg.gray_flip_h){
+                if (cfg.gray_flip_h && myrank == 2){
                     for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -158,7 +163,7 @@ int main() {
                 }
 
             #pragma omp section
-                if (cfg.gray_flip_v){
+                if (cfg.gray_flip_v && myrank == 1){
                     for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
