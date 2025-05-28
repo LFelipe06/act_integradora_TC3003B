@@ -316,6 +316,10 @@ class ImageProcessorGUI(QMainWindow):
 
     def write_config(self):
         config_path = os.path.join(os.path.dirname(__file__), "config.txt")
+        # Cuenta imágenes BMP en la carpeta de entrada
+        total_imgs = 0
+        if self.input_folder and os.path.isdir(self.input_folder):
+            total_imgs = len([f for f in os.listdir(self.input_folder) if f.lower().endswith(".bmp")])
         config_lines = [
             f"grayscale={int(self.cb_grayscale.isChecked())}",
             f"flip_h={int(self.cb_flip_h.isChecked())}",
@@ -324,7 +328,8 @@ class ImageProcessorGUI(QMainWindow):
             f"gray_flip_v={int(self.cb_gray_flip_v.isChecked())}",
             f"blur={int(self.cb_blur.isChecked())}",
             f"folder_path={self.input_folder}",
-            f"blur_value={self.blur_input.text() if self.cb_blur.isChecked() else '0'}"
+            f"blur_value={self.blur_input.text() if self.cb_blur.isChecked() else '0'}",
+            f"total_imgs={total_imgs}"
         ]
         with open(config_path, "w", encoding="utf-8") as f:
             f.write("\n".join(config_lines))
