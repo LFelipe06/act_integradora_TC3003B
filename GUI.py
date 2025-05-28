@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton, QVBoxLayout,
     QFileDialog, QListWidget, QMainWindow, QAction, QHBoxLayout,
     QGroupBox, QListWidgetItem, QCheckBox, QProgressBar, QSizePolicy,
-    QSlider, QLineEdit
+    QSlider, QLineEdit, QTextEdit
 )
 from PyQt5.QtGui import QPixmap, QIcon, QIntValidator
 from PyQt5.QtCore import Qt, QSize, QThread, pyqtSignal, QTimer, QProcess
@@ -152,11 +152,11 @@ class ImageProcessorGUI(QMainWindow):
         right_layout.addWidget(progress_group)
 
         # Mostrar contenido del reporte
-        self.report_label = QLabel("")
-        self.report_label.setWordWrap(True)
-        self.report_label.setMinimumHeight(120)
-        self.report_label.setStyleSheet("font-size: 12px;")
-        right_layout.addWidget(self.report_label)
+        self.report_text = QTextEdit()
+        self.report_text.setReadOnly(True)
+        self.report_text.setMinimumHeight(250)
+        self.report_text.setStyleSheet("font-size: 12px;")
+        right_layout.addWidget(self.report_text)
 
         # Vista previa de la imagen de salida
         self.output_preview_label = QLabel()
@@ -253,7 +253,7 @@ class ImageProcessorGUI(QMainWindow):
             # Ejecuta tester.exe en un hilo para no bloquear la GUI
             threading.Thread(target=self.run_tester_subprocess, args=(tester_path,), daemon=True).start()
         else:
-            self.report_label.setText("tester.exe no encontrado.")
+            self.report_text.setPlainText("tester.exe no encontrado.")
             self.progress_timer.stop()
             return
 
@@ -267,8 +267,8 @@ class ImageProcessorGUI(QMainWindow):
             "blur_value": int(self.blur_input.text()) if self.cb_blur.isChecked() else 0
         }
 
-        print(f"Selected effects: {selected_effects}")
-        self.report_label.setText("Procesando imágenes...")
+        #print(f"Selected effects: {selected_effects}")
+        self.report_text.setPlainText("Procesando imágenes...")
         
         self.progress_bar.setValue(0)
         self.process_btn.setEnabled(False)
@@ -282,7 +282,7 @@ class ImageProcessorGUI(QMainWindow):
         try:
             subprocess.run([tester_path], check=True)
         except Exception as e:
-            self.report_label.setText(f"Error al ejecutar tester.exe: {e}")
+            self.report_text.setPlainText(f"Error al ejecutar tester.exe: {e}")
         # Llama a processing_finished en el hilo principal
         QTimer.singleShot(0, self.processing_finished)
 
@@ -300,49 +300,19 @@ class ImageProcessorGUI(QMainWindow):
             self.process_btn.setEnabled(True)
             self.progress_bar.setValue(100)
             self.update_output_list()
-            self.generate_report()
             self.display_report()
         else:
             # Si no ha terminado, espera y vuelve a intentar
+            self.update_output_list()
             QTimer.singleShot(100, self.processing_finished)
 
-    def generate_report(self):
-        try:
-            files = [f for f in os.listdir(self.input_folder) if f.lower().endswith(".bmp")]
-            num_files = len(files)
-
-            effects = []
-            if self.cb_grayscale.isChecked(): effects.append("Escala de grises")
-            if self.cb_flip_h.isChecked(): effects.append("Volteo horizontal")
-            if self.cb_flip_v.isChecked(): effects.append("Volteo vertical")
-            if self.cb_gray_flip_h.isChecked(): effects.append("Grises + Volteo horizontal")
-            if self.cb_gray_flip_v.isChecked(): effects.append("Grises + Volteo vertical")
-            if self.cb_blur.isChecked(): effects.append(f"Desenfoque ({self.blur_input.text()})")
-
-            content = (
-                f"REPORTE DE PROCESAMIENTO\n"
-                f"-------------------------\n"
-                f"Imágenes procesadas: {num_files}\n"
-                f"Carpeta de entrada: {self.input_folder}\n"
-                f"Carpeta de salida: {os.path.abspath(self.output_folder)}\n"
-                f"Efectos aplicados:\n - " + "\n - ".join(effects) + "\n\n"
-                f"Fecha y hora: {time.strftime('%Y-%m-%d %H:%M:%S')}\n"
-            )
-
-            report_path = os.path.join(self.output_folder, "reporte.txt")
-            with open(report_path, "w", encoding="utf-8") as f:
-                f.write(content)
-
-        except Exception as e:
-            self.report_label.setText(f"Error al generar reporte: {e}")
-
     def display_report(self):
-        report_path = os.path.join(self.output_folder, "reporte.txt")
+        report_path = os.path.join("./", "output_log.txt")
         if os.path.exists(report_path):
             with open(report_path, "r", encoding="utf-8") as f:
-                self.report_label.setText(f.read())
+                self.report_text.setPlainText(f.read())
         else:
-            self.report_label.setText("No se encontró el archivo de reporte.")
+            self.report_text.setPlainText("No se encontró el archivo de reporte.")
 
     def write_config(self):
         config_path = os.path.join(os.path.dirname(__file__), "config.txt")
@@ -385,7 +355,9 @@ class ImageProcessorGUI(QMainWindow):
         try:
             with open("progress.txt", "r") as f:
                 count = f.read().count('1')
+                print(f"Counted {count} / {total} operations completed.")
             percent = int((count / total) * 100)
+
             self.progress_bar.setValue(min(percent, 100))
         except Exception:
             self.progress_bar.setValue(0)

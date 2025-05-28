@@ -10,13 +10,13 @@
 #define OUTPUT_DIR ""
 // Define los rangos para dividir 100 imágenes en 3 bloques
 #define BLOCK1_START 0
-#define BLOCK1_END 32
+#define BLOCK1_END 4
 
-#define BLOCK2_START 33
-#define BLOCK2_END 65
+#define BLOCK2_START 5
+#define BLOCK2_END 9
 
-#define BLOCK3_START 66
-#define BLOCK3_END 99
+#define BLOCK3_START 10
+#define BLOCK3_END 14
 
 
 // Función para verificar si un archivo existe
