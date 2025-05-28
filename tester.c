@@ -7,17 +7,7 @@
 #include <omp.h>
 #include <mpi.h>
 
-#define NUM_IMAGES 100
 #define OUTPUT_DIR ""
-// Define los rangos para dividir 100 imágenes en 3 bloques
-#define BLOCK1_START 0
-#define BLOCK1_END 4
-
-#define BLOCK2_START 5
-#define BLOCK2_END 9
-
-#define BLOCK3_START 10
-#define BLOCK3_END 14
 
 
 // Función para verificar si un archivo existe
@@ -39,6 +29,7 @@ typedef struct {
     int blur;
     char folder_path[256];
     int blur_value;
+    int total_imgs;
 } Config;
 
 int parse_config(Config *cfg, const char *filename) {
@@ -56,6 +47,7 @@ int parse_config(Config *cfg, const char *filename) {
             else if (strcmp(key, "blur") == 0) cfg->blur = atoi(value);
             else if (strcmp(key, "folder_path") == 0) strncpy(cfg->folder_path, value, sizeof(cfg->folder_path)-1);
             else if (strcmp(key, "blur_value") == 0) cfg->blur_value = atoi(value);
+            else if (strcmp(key, "total_imgs") == 0) cfg->total_imgs = atoi(value);
         }
     }
     fclose(file);
@@ -81,8 +73,22 @@ int main(int argc, char** argv) {
         printf("No se pudo abrir config.txt\n");
         return 1;
     }
-    //printf("Config: grayscale=%d, flip_h=%d, flip_v=%d, gray_flip_h=%d, gray_flip_v=%d, blur=%d, folder_path=%s, blur_value=%d\n",
-        //cfg.grayscale, cfg.flip_h, cfg.flip_v, cfg.gray_flip_h, cfg.gray_flip_v, cfg.blur, cfg.folder_path, cfg.blur_value);
+
+    // Calcular los bloques dinámicamente según total_imgs
+    int total_imgs = cfg.total_imgs;
+    int block_size = total_imgs / 3;
+    int remainder = total_imgs % 3;
+
+    int block1_start = 0;
+    int block1_end = block_size - 1 + (remainder > 0 ? 1 : 0);
+
+    int block2_start = block1_end + 1;
+    int block2_end = block2_start + block_size - 1 + (remainder > 1 ? 1 : 0);
+
+    int block3_start = block2_end + 1;
+    int block3_end = total_imgs - 1;
+
+    // Ahora puedes usar block1_start, block1_end, block2_start, block2_end, block3_start, block3_end en tus ciclos
 
     // Crear la carpeta "img_res/" si no existe
     struct stat st = {0};
@@ -116,7 +122,7 @@ int main(int argc, char** argv) {
             #pragma omp section
             if (cfg.gray_flip_h && myrank == 1){
                 {
-                    for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
+                    for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp", cfg.folder_path, i);
                         sprintf(out_file, "inv_grey_horizontal_%d.bmp", i);
@@ -147,7 +153,7 @@ int main(int argc, char** argv) {
                     }}
             #pragma omp section
                 if (cfg.gray_flip_h){
-                    for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_grey_horizontal_%d.bmp", i);
@@ -180,7 +186,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.gray_flip_v){
-                    for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_grey_vertical_%d.bmp", i);
@@ -196,7 +202,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.gray_flip_v){
-                    for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_grey_vertical_%d.bmp", i);
@@ -212,7 +218,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if(cfg.flip_h){
-                    for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
+                    for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_color_horizontal_%d.bmp", i);
@@ -228,7 +234,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if(cfg.flip_h){
-                    for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_color_horizontal_%d.bmp", i);
@@ -244,7 +250,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if(cfg.flip_h){
-                    for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_color_horizontal_%d.bmp", i);
@@ -260,7 +266,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.flip_v){
-                    for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
+                    for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_color_vertical_%d.bmp", i);
@@ -276,7 +282,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.flip_v){
-                    for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_color_vertical_%d.bmp", i);
@@ -292,7 +298,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.flip_v){
-                    for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_color_vertical_%d.bmp", i);
@@ -308,7 +314,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.grayscale){
-                    for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
+                    for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "grey_%d.bmp", i);
@@ -324,7 +330,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.grayscale){
-                    for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "grey_%d.bmp", i);
@@ -340,7 +346,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.grayscale){
-                    for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "grey_%d.bmp", i);
@@ -356,7 +362,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.blur){
-                    for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
+                    for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "desenfoque_%d.bmp", i);
@@ -372,7 +378,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.blur){
-                    for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
+                    for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "desenfoque_%d.bmp", i);
@@ -388,7 +394,7 @@ int main(int argc, char** argv) {
                 }
             #pragma omp section
                 if (cfg.blur){
-                    for (int i = BLOCK3_START; i <= BLOCK3_END; i++) {
+                    for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "desenfoque_%d.bmp", i);
@@ -413,8 +419,8 @@ int main(int argc, char** argv) {
 
     printf("Tiempo de ejecución: %f segundos\n", total_time);
 
-    long total_operations = NUM_IMAGES * 54; // 54 bytes de cabecera por imagen
-    for (int i = 0; i < NUM_IMAGES; i++) {
+    long total_operations = cfg.total_imgs * 54; // 54 bytes de cabecera por imagen
+    for (int i = 0; i < cfg.total_imgs; i++) {
         //  imagen ancho * alto píxeles
         long ancho = 4928;
         long alto = 3264;
@@ -428,8 +434,8 @@ int main(int argc, char** argv) {
     printf("MIPS ejecutados: %.2f\n", mips);
 
     // Calcular el número total de bytes procesados
-    long total_bytes = NUM_IMAGES * 54; // 54 bytes de cabecera por imagen
-    for (int i = 0; i < NUM_IMAGES; i++) {
+    long total_bytes = cfg.total_imgs * 54; // 54 bytes de cabecera por imagen
+    for (int i = 0; i < cfg.total_imgs; i++) {
         total_bytes += 4928 * 3264 * 3; // Ancho * Alto * 3 bytes por píxel (RGB)
     }
 
