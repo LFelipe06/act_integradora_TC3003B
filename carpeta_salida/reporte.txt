@@ -1,0 +1,9 @@
+REPORTE DE PROCESAMIENTO
+-------------------------
+Imágenes procesadas: 100
+Carpeta de entrada: C:/Users/erwin/Desktop/Semestre 8/redes/act_integradora_TC3003B/imagenes
+Carpeta de salida: C:\Users\erwin\Desktop\Semestre 8\redes\act_integradora_TC3003B\carpeta_salida
+Efectos aplicados:
+ - Escala de grises
+
+Fecha y hora: 2025-05-28 10:04:02

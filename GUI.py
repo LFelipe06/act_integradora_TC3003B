@@ -1,6 +1,8 @@
 import sys
 import os
 import time
+import subprocess
+import threading
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton, QVBoxLayout,
     QFileDialog, QListWidget, QMainWindow, QAction, QHBoxLayout,
@@ -8,7 +10,7 @@ from PyQt5.QtWidgets import (
     QSlider, QLineEdit
 )
 from PyQt5.QtGui import QPixmap, QIcon, QIntValidator
-from PyQt5.QtCore import Qt, QSize, QThread, pyqtSignal
+from PyQt5.QtCore import Qt, QSize, QThread, pyqtSignal, QTimer, QProcess
 
 
 class ImageProcessingThread(QThread):
@@ -162,6 +164,13 @@ class ImageProcessorGUI(QMainWindow):
         os.makedirs(self.output_folder, exist_ok=True)
         self.update_output_list()
 
+        self.progress_timer = QTimer(self)
+        self.progress_timer.timeout.connect(self.update_progress_from_file)
+        self.progress_timer.setInterval(1)  # 1 ms = 0.001 seconds
+
+        self.tester_process = QProcess(self)
+        self.tester_process.finished.connect(self.processing_finished)
+
     def setup_icon_view(self, list_widget):
         list_widget.setViewMode(QListWidget.IconMode)
         list_widget.setIconSize(QSize(100, 100))
@@ -209,6 +218,21 @@ class ImageProcessorGUI(QMainWindow):
             self.input_label.setText("⚠️ Debe seleccionar una carpeta de entrada primero.")
             return
 
+        self.write_config()  # Save current settings to config.txt
+
+        self.progress_bar.setValue(0)
+        self.process_btn.setEnabled(False)
+        self.progress_timer.start()  # Start real-time progress updates
+
+        tester_path = os.path.join(os.path.dirname(__file__), "tester.exe")
+        if os.path.exists(tester_path):
+            # Ejecuta tester.exe en un hilo para no bloquear la GUI
+            threading.Thread(target=self.run_tester_subprocess, args=(tester_path,), daemon=True).start()
+        else:
+            self.report_label.setText("tester.exe no encontrado.")
+            self.progress_timer.stop()
+            return
+
         selected_effects = {
             "grayscale": self.cb_grayscale.isChecked(),
             "flip_h": self.cb_flip_h.isChecked(),
@@ -219,6 +243,9 @@ class ImageProcessorGUI(QMainWindow):
             "blur_value": int(self.blur_input.text()) if self.cb_blur.isChecked() else 0
         }
 
+        print(f"Selected effects: {selected_effects}")
+        self.report_label.setText("Procesando imágenes...")
+        
         self.progress_bar.setValue(0)
         self.process_btn.setEnabled(False)
 
@@ -227,7 +254,16 @@ class ImageProcessorGUI(QMainWindow):
         self.processing_thread.done.connect(self.processing_finished)
         self.processing_thread.start()
 
+    def run_tester_subprocess(self, tester_path):
+        try:
+            subprocess.run([tester_path], check=True)
+        except Exception as e:
+            self.report_label.setText(f"Error al ejecutar tester.exe: {e}")
+        # Llama a processing_finished en el hilo principal
+        QTimer.singleShot(0, self.processing_finished)
+
     def processing_finished(self):
+        self.progress_timer.stop()
         self.process_btn.setEnabled(True)
         self.progress_bar.setValue(100)
         self.update_output_list()
@@ -271,6 +307,52 @@ class ImageProcessorGUI(QMainWindow):
                 self.report_label.setText(f.read())
         else:
             self.report_label.setText("No se encontró el archivo de reporte.")
+
+    def write_config(self):
+        config_path = os.path.join(os.path.dirname(__file__), "config.txt")
+        config_lines = [
+            f"grayscale={int(self.cb_grayscale.isChecked())}",
+            f"flip_h={int(self.cb_flip_h.isChecked())}",
+            f"flip_v={int(self.cb_flip_v.isChecked())}",
+            f"gray_flip_h={int(self.cb_gray_flip_h.isChecked())}",
+            f"gray_flip_v={int(self.cb_gray_flip_v.isChecked())}",
+            f"blur={int(self.cb_blur.isChecked())}",
+            f"folder_path={self.input_folder}",
+            f"blur_value={self.blur_input.text() if self.cb_blur.isChecked() else '0'}"
+        ]
+        with open(config_path, "w", encoding="utf-8") as f:
+            f.write("\n".join(config_lines))
+
+    def get_total_expected_operations(self):
+        # Count .bmp files in input folder
+        if not self.input_folder or not os.path.isdir(self.input_folder):
+            return 0
+        bmp_files = [f for f in os.listdir(self.input_folder) if f.lower().endswith(".bmp")]
+        num_files = len(bmp_files)
+        # Count checked effect checkboxes
+        effects = [
+            self.cb_grayscale.isChecked(),
+            self.cb_flip_h.isChecked(),
+            self.cb_flip_v.isChecked(),
+            self.cb_gray_flip_h.isChecked(),
+            self.cb_gray_flip_v.isChecked(),
+            self.cb_blur.isChecked()
+        ]
+        num_effects = sum(effects)
+        return num_files * num_effects
+
+    def update_progress_from_file(self):
+        total = self.get_total_expected_operations()
+        if total == 0:
+            self.progress_bar.setValue(0)
+            return
+        try:
+            with open("progress.txt", "r") as f:
+                count = f.read().count('1')
+            percent = int((count / total) * 100)
+            self.progress_bar.setValue(min(percent, 100))
+        except Exception:
+            self.progress_bar.setValue(0)
 
 
 if __name__ == "__main__":

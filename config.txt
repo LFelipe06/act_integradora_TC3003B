@@ -1,0 +1,8 @@
+grayscale=1
+flip_h=0
+flip_v=0
+gray_flip_h=0
+gray_flip_v=0
+blur=0
+folder_path=C:/Users/erwin/Desktop/Semestre 8/redes/act_integradora_TC3003B/imagenes
+blur_value=0
