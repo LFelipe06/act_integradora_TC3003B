@@ -287,7 +287,9 @@ class ImageProcessorGUI(QMainWindow):
         try:
             subprocess.run(cmd_list, check=True)
         except Exception as e:
-            self.report_text.setPlainText(f"Error al ejecutar tester.exe: {e}")
+            # Usa QTimer.singleShot para actualizar la GUI desde el hilo principal
+            QTimer.singleShot(0, lambda: self.report_text.setPlainText(f"Error al ejecutar tester.exe: {e}"))
+        # Siempre llama a processing_finished desde el hilo principal
         QTimer.singleShot(0, self.processing_finished)
 
     def processing_finished(self):
