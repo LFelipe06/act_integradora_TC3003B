@@ -456,6 +456,7 @@ int main(int argc, char** argv) {
     double avg_byte_rate = total_bytes / total_time;
     printf("Tasa de bytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
 
+    MPI_Finalize(); // <-- Agrega esta línea antes de terminar main
 
     return 0;
 }
