@@ -182,23 +182,23 @@ int main(int argc, char** argv) {
                 }
 
             #pragma omp section
+                if (cfg.gray_flip_v && myrank == 0){
+                    for (int i = block1_start; i <= block1_end; i++) {
+                        char out_file[500], in_file[500];
+                        sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
+                        sprintf(out_file, "inv_grey_vertical_%d.bmp", i);
+                        inv_img_grey_vertical(out_file, in_file);
+
+                        // Escribir un '1' en progress.txt después de procesar cada imagen
+                        FILE *progress0 = fopen("progress0.txt", "a");
+                        if (progress0) {
+                            fputc('1', progress0);
+                            fclose(progress0);
+                        }
+                    }
+                }
+            #pragma omp section
                 if (cfg.gray_flip_v && myrank == 1){
-                    for (int i = block1_start; i <= block1_end; i++) {
-                        char out_file[500], in_file[500];
-                        sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
-                        sprintf(out_file, "inv_grey_vertical_%d.bmp", i);
-                        inv_img_grey_vertical(out_file, in_file);
-
-                        // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
-                        }
-                    }
-                }
-            #pragma omp section
-                if (cfg.gray_flip_v){
                     for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -206,15 +206,15 @@ int main(int argc, char** argv) {
                         inv_img_grey_vertical(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress1 = fopen("progress1.txt", "a");
+                        if (progress1) {
+                            fputc('1', progress1);
+                            fclose(progress1);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.gray_flip_v){
+                if (cfg.gray_flip_v && myrank == 2){
                     for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -222,15 +222,15 @@ int main(int argc, char** argv) {
                         inv_img_grey_vertical(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress2 = fopen("progress2.txt", "a");
+                        if (progress2) {
+                            fputc('1', progress2);
+                            fclose(progress2);
                         }
                     }
                 }
             #pragma omp section
-                if(cfg.flip_h){
+                if(cfg.flip_h && myrank == 0){
                     for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -238,15 +238,15 @@ int main(int argc, char** argv) {
                         inv_img_color_horizontal(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress0 = fopen("progress0.txt", "a");
+                        if (progress0) {
+                            fputc('1', progress0);
+                            fclose(progress0);
                         }
                     }
                 }
             #pragma omp section
-                if(cfg.flip_h){
+                if(cfg.flip_h && myrank == 1){
                     for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -254,15 +254,15 @@ int main(int argc, char** argv) {
                         inv_img_color_horizontal(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress1 = fopen("progress1.txt", "a");
+                        if (progress1) {
+                            fputc('1', progress1);
+                            fclose(progress1);
                         }
                     }
                 }
             #pragma omp section
-                if(cfg.flip_h){
+                if(cfg.flip_h && myrank == 2){
                     for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -270,15 +270,15 @@ int main(int argc, char** argv) {
                         inv_img_color_horizontal(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress2 = fopen("progress2.txt", "a");
+                        if (progress2) {
+                            fputc('1', progress2);
+                            fclose(progress2);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.flip_v){
+                if (cfg.flip_v && myrank == 0){
                     for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -286,15 +286,15 @@ int main(int argc, char** argv) {
                         inv_img_color_vertical(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress0 = fopen("progress0.txt", "a");
+                        if (progress0) {
+                            fputc('1', progress0);
+                            fclose(progress0);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.flip_v){
+                if (cfg.flip_v && myrank == 1){
                     for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -302,15 +302,15 @@ int main(int argc, char** argv) {
                         inv_img_color_vertical(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress1 = fopen("progress1.txt", "a");
+                        if (progress1) {
+                            fputc('1', progress1);
+                            fclose(progress1);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.flip_v){
+                if (cfg.flip_v && myrank == 2){
                     for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -318,15 +318,15 @@ int main(int argc, char** argv) {
                         inv_img_color_vertical(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress2 = fopen("progress2.txt", "a");
+                        if (progress2) {
+                            fputc('1', progress2);
+                            fclose(progress2);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.grayscale){
+                if (cfg.grayscale && myrank == 0){
                     for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -334,15 +334,15 @@ int main(int argc, char** argv) {
                         gray_img(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress0 = fopen("progress0.txt", "a");
+                        if (progress0) {
+                            fputc('1', progress0);
+                            fclose(progress0);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.grayscale){
+                if (cfg.grayscale && myrank == 1){
                     for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -350,15 +350,15 @@ int main(int argc, char** argv) {
                         gray_img(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress1 = fopen("progress1.txt", "a");
+                        if (progress1) {
+                            fputc('1', progress1);
+                            fclose(progress1);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.grayscale){
+                if (cfg.grayscale && myrank == 2){
                     for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -366,15 +366,15 @@ int main(int argc, char** argv) {
                         gray_img(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress2 = fopen("progress2.txt", "a");
+                        if (progress2) {
+                            fputc('1', progress2);
+                            fclose(progress2);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.blur){
+                if (cfg.blur && myrank == 0){
                     for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -382,15 +382,15 @@ int main(int argc, char** argv) {
                         desenfoque(in_file, out_file, cfg.blur_value);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress0 = fopen("progress0.txt", "a");
+                        if (progress0) {
+                            fputc('1', progress0);
+                            fclose(progress0);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.blur){
+                if (cfg.blur && myrank == 1){
                     for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -398,15 +398,15 @@ int main(int argc, char** argv) {
                         desenfoque(in_file, out_file, cfg.blur_value);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress1 = fopen("progress1.txt", "a");
+                        if (progress1) {
+                            fputc('1', progress1);
+                            fclose(progress1);
                         }
                     }
                 }
             #pragma omp section
-                if (cfg.blur){
+                if (cfg.blur && myrank == 2){
                     for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -414,10 +414,10 @@ int main(int argc, char** argv) {
                         desenfoque(in_file, out_file, cfg.blur_value);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress2 = fopen("progress2.txt", "a");
+                        if (progress2) {
+                            fputc('1', progress2);
+                            fclose(progress2);
                         }
                     }
                 }
