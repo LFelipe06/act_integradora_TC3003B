@@ -364,7 +364,7 @@ class ImageProcessorGUI(QMainWindow):
         try:
             with open("progress.txt", "r") as f:
                 count = f.read().count('1')
-                print(f"Counted {count} / {total} operations completed.")
+                #print(f"Counted {count} / {total} operations completed.")
             percent = int((count / total) * 100)
 
             self.progress_bar.setValue(min(percent, 100))
