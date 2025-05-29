@@ -251,7 +251,7 @@ class ImageProcessorGUI(QMainWindow):
         tester_path = os.path.join(os.path.dirname(__file__), "tester.exe")
         if os.path.exists(tester_path):
             # Ejecuta tester.exe en un hilo para no bloquear la GUI
-            threading.Thread(target=self.run_tester_subprocess, args=(tester_path,), daemon=True).start()
+            threading.Thread(target=self.run_tester_subprocess, args=("mpiexec -n 3 -f machinefile ./tester.exe",), daemon=True).start()
         else:
             self.report_text.setPlainText("tester.exe no encontrado.")
             self.progress_timer.stop()
