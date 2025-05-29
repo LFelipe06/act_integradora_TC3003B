@@ -135,6 +135,7 @@ int main(int argc, char** argv) {
                             fputc('1', progress);
                             fclose(progress);
                         }
+                        printf("Procesada imagen: %s, %d\n", out_file, myrank);
                     }
                 }}
             #pragma omp section
@@ -151,6 +152,7 @@ int main(int argc, char** argv) {
                             fputc('1', progress);
                             fclose(progress);
                         }
+                        printf("Procesada imagen: %s, %d\n", out_file, myrank);
                     }}
             #pragma omp section
                 if (cfg.gray_flip_h && myrank == 2){
@@ -166,6 +168,7 @@ int main(int argc, char** argv) {
                             fputc('1', progress);
                             fclose(progress);
                         }
+                        printf("Procesada imagen: %s, %d\n", out_file, myrank);
                     }
                 }
 
