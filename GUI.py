@@ -363,15 +363,17 @@ class ImageProcessorGUI(QMainWindow):
         if total == 0:
             self.progress_bar.setValue(0)
             return
-        try:
-            with open("progress.txt", "r") as f:
-                count = f.read().count('1')
-                #print(f"Counted {count} / {total} operations completed.")
-            percent = int((count / total) * 100)
 
-            self.progress_bar.setValue(min(percent, 100))
-        except Exception:
-            self.progress_bar.setValue(0)
+        count = 0
+        for fname in ["progress0.txt", "progress1.txt", "progress2.txt"]:
+            try:
+                with open(fname, "r") as f:
+                    count += f.read().count('1')
+            except Exception:
+                pass  # Ignore missing files
+
+        percent = int((count / total) * 100) if total > 0 else 0
+        self.progress_bar.setValue(min(percent, 100))
 
     def show_output_thumbnail(self, item):
         filename = item.text()

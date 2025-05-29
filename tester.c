@@ -55,16 +55,25 @@ int parse_config(Config *cfg, const char *filename) {
 }
 
 int main(int argc, char** argv) {
-
     int myrank, nprocs;
     MPI_Init(&argc, &argv);
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
     MPI_Comm_rank(MPI_COMM_WORLD, &myrank);
 
     // Vaciar el archivo progress.txt al inicio
-    FILE *progress = fopen("progress.txt", "w");
-    if (progress) {
-        fclose(progress);
+    FILE *progress0 = fopen("progress0.txt", "w");
+    if (progress0) {
+        fclose(progress0);
+    }
+
+    FILE *progress1 = fopen("progress1.txt", "w");
+    if (progress1) {
+        fclose(progress1);
+    }
+
+    FILE *progress2 = fopen("progress2.txt", "w");
+    if (progress2) {
+        fclose(progress2);
     }
 
     printf("Iniciando el procesamiento de imágenes...\n");
@@ -130,10 +139,10 @@ int main(int argc, char** argv) {
                         inv_img_grey_horizontal(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress0 = fopen("progress0.txt", "a");
+                        if (progress0) {
+                            fputc('1', progress0);
+                            fclose(progress0);
                         }
                         printf("Procesada imagen: %s, %d\n", out_file, myrank);
                     }
@@ -147,10 +156,10 @@ int main(int argc, char** argv) {
                         inv_img_grey_horizontal(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress1 = fopen("progress1.txt", "a");
+                        if (progress1) {
+                            fputc('1', progress1);
+                            fclose(progress1);
                         }
                         printf("Procesada imagen: %s, %d\n", out_file, myrank);
                     }}
@@ -163,10 +172,10 @@ int main(int argc, char** argv) {
                         inv_img_grey_horizontal(out_file, in_file);
 
                         // Escribir un '1' en progress.txt después de procesar cada imagen
-                        FILE *progress = fopen("progress.txt", "a");
-                        if (progress) {
-                            fputc('1', progress);
-                            fclose(progress);
+                        FILE *progress2 = fopen("progress2.txt", "a");
+                        if (progress2) {
+                            fputc('1', progress2);
+                            fclose(progress2);
                         }
                         printf("Procesada imagen: %s, %d\n", out_file, myrank);
                     }
