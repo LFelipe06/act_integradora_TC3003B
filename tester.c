@@ -56,11 +56,6 @@ int parse_config(Config *cfg, const char *filename) {
 
 int main(int argc, char** argv) {
 
-    int myrank;
-    MPI_Init(&argc, &argv);
-    MPI_Comm_rank(MPI_COMM_WORLD, &myrank);
-int main(int argc, char** argv) {
-
     int myrank, nprocs;
     MPI_Comm_rank(MPI_COMM_WORLD, &myrank);
 
@@ -124,7 +119,6 @@ int main(int argc, char** argv) {
         #pragma omp sections
         {
             #pragma omp section
-            if (cfg.gray_flip_h && myrank == 0){
             if (cfg.gray_flip_h && myrank == 0) {
                 {
                     for (int i = block1_start; i <= block1_end; i++) {
@@ -143,8 +137,6 @@ int main(int argc, char** argv) {
                 }}
             #pragma omp section
                 if (cfg.gray_flip_h && myrank == 1){
-                    for (int i = BLOCK2_START; i <= BLOCK2_END; i++) {
-                if (cfg.gray_flip_h && myrank == 1){
                     for (int i = block2_start; i <= block2_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
@@ -159,7 +151,6 @@ int main(int argc, char** argv) {
                         }
                     }}
             #pragma omp section
-                if (cfg.gray_flip_h && myrank == 2 ){
                 if (cfg.gray_flip_h && myrank == 2){
                     for (int i = block3_start; i <= block3_end; i++) {
                         char out_file[500], in_file[500];
@@ -178,7 +169,7 @@ int main(int argc, char** argv) {
 
             #pragma omp section
                 if (cfg.gray_flip_v && myrank == 1){
-                    for (int i = BLOCK1_START; i <= BLOCK1_END; i++) {
+                    for (int i = block1_start; i <= block1_end; i++) {
                         char out_file[500], in_file[500];
                         sprintf(in_file, "%s/%d.bmp",cfg.folder_path, i);
                         sprintf(out_file, "inv_grey_vertical_%d.bmp", i);
