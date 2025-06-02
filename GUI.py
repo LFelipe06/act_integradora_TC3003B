@@ -198,7 +198,7 @@ class ImageProcessorGUI(QMainWindow):
 
     def update_input_list(self):
         self.input_list.clear()
-        self._load_images_to_list(self.input_folder, self.input_list)
+        self._load_images_to_list_name(self.input_folder, self.input_list)
 
     def update_output_list(self):
         self.output_list.clear()

@@ -448,6 +448,13 @@ int main(int argc, char** argv) {
     double avg_byte_rate = total_bytes / total_time;
     printf("Tasa de bytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
 
+    fprintf(outputLog, "Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
+    fprintf(outputLog, "Tiempo de ejecución: %f segundos\n", total_time);
+    fprintf(outputLog, "Instrucciones totales ejecutadas: %ld\n", total_instructions);
+    fprintf(outputLog, "MIPS ejecutados: %.2f\n", mips);
+    fprintf(outputLog, "Tasa de bytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
+    fclose(outputLog);
+
     MPI_Finalize(); // <-- Agrega esta línea antes de terminar main
 
     return 0;
