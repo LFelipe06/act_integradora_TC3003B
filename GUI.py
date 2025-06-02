@@ -242,6 +242,14 @@ class ImageProcessorGUI(QMainWindow):
             self.input_label.setText("⚠️ Debe seleccionar una carpeta de entrada primero.")
             return
 
+        # Vacía los archivos de progreso antes de iniciar el procesamiento
+        for fname in ["progress0.txt", "progress1.txt", "progress2.txt"]:
+            try:
+                with open(fname, "w"):
+                    pass
+            except Exception:
+                pass
+
         self.write_config()  # Save current settings to config.txt
 
         self.progress_bar.setValue(0)

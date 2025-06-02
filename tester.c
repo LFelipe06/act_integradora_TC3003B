@@ -60,21 +60,13 @@ int main(int argc, char** argv) {
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
     MPI_Comm_rank(MPI_COMM_WORLD, &myrank);
 
-    // Vaciar el archivo progress.txt al inicio
+    // Vaciar los archivos de progreso al inicio (eliminando todo su contenido)
     FILE *progress0 = fopen("progress0.txt", "w");
-    if (progress0) {
-        fclose(progress0);
-    }
-
+    if (progress0) fclose(progress0);
     FILE *progress1 = fopen("progress1.txt", "w");
-    if (progress1) {
-        fclose(progress1);
-    }
-
+    if (progress1) fclose(progress1);
     FILE *progress2 = fopen("progress2.txt", "w");
-    if (progress2) {
-        fclose(progress2);
-    }
+    if (progress2) fclose(progress2);
 
     printf("Iniciando el procesamiento de imágenes...\n");
 
