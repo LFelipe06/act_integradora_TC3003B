@@ -295,11 +295,13 @@ class ImageProcessorGUI(QMainWindow):
     def processing_finished(self):
         total = self.get_total_expected_operations()
         count = 0
-        try:
-            with open("progress.txt", "r") as f:
-                count = f.read().count('1')
-        except Exception:
-            pass
+        # Leer los tres archivos de progreso y sumar los '1'
+        for fname in ["progress0.txt", "progress1.txt", "progress2.txt"]:
+            try:
+                with open(fname, "r") as f:
+                    count += f.read().count('1')
+            except Exception:
+                pass
 
         if count >= total:
             self.progress_timer.stop()
