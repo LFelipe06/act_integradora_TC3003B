@@ -443,16 +443,23 @@ int main(int argc, char** argv) {
     for (int i = 0; i < cfg.total_imgs; i++) {
         total_bytes += 4928 * 3264 * 3; // Ancho * Alto * 3 bytes por píxel (RGB)
     }
+    long total_mb = total_bytes / (1024 * 1024); // Convertir a MB
 
     // Calcular la tasa de bytes promedio
-    double avg_byte_rate = total_bytes / total_time;
-    printf("Tasa de bytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
+    double avg_byte_rate = total_mb / total_time;
+    printf("Tasa de megabytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
 
-    fprintf(outputLog, "Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
+    FILE *outputLog = fopen("output_log.txt", "a");
+    if (outputLog == NULL) {
+        fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
+        return;
+    }
+
+    fput(outputLog, "Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
     fprintf(outputLog, "Tiempo de ejecución: %f segundos\n", total_time);
     fprintf(outputLog, "Instrucciones totales ejecutadas: %ld\n", total_instructions);
     fprintf(outputLog, "MIPS ejecutados: %.2f\n", mips);
-    fprintf(outputLog, "Tasa de bytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
+    fprintf(outputLog, "Tasa de megabytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
     fclose(outputLog);
 
     MPI_Finalize(); // <-- Agrega esta línea antes de terminar main
