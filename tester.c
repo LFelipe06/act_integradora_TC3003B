@@ -443,7 +443,7 @@ int main(int argc, char** argv) {
     for (int i = 0; i < cfg.total_imgs; i++) {
         total_bytes += 4928 * 3264 * 3; // Ancho * Alto * 3 bytes por píxel (RGB)
     }
-    long total_mb = total_bytes / (1024 * 1024); // Convertir a MB
+    long total_mb = total_bytes / (1048576); // Convertir a MB
 
     // Calcular la tasa de bytes promedio
     double avg_byte_rate = total_mb / total_time;
@@ -459,7 +459,7 @@ int main(int argc, char** argv) {
     fprintf(outputLog2, "Tiempo de ejecución: %f segundos\n", total_time);
     fprintf(outputLog2, "Instrucciones totales ejecutadas: %ld\n", total_instructions);
     fprintf(outputLog2, "MIPS ejecutados: %.2f\n", mips);
-    fprintf(outputLog2, "Tasa de megabytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
+    fprintf(outputLog2, "Tasa de megabytes promedio: %.2f megabytes/segundo\n", avg_byte_rate);
     fclose(outputLog2);
 
     MPI_Finalize(); // <-- Agrega esta línea antes de terminar main
