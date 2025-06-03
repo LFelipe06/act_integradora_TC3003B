@@ -1,3 +1,3 @@
 Este proyecto implementa un sistema distribuido para el procesamiento de imágenes BMP de gran formato utilizando un clúster local de tres computadoras conectadas por red. Aprovechando tecnologías como MPI, OpenMP, NFS y SSH, el sistema reparte tareas entre múltiples nodos y núcleos para aplicar efectos como escala de grises, volteos e incluso filtros de desenfoque intensivo. Además, cuenta con una interfaz gráfica construida en Python con PyQt5 que permite a los usuarios seleccionar imágenes, configurar los efectos y visualizar métricas de rendimiento del sistema en tiempo real.
 
-Para saber más sobre los antecedentes, implementación, tecnologías utilizadas y la ejecución del proyecto accede a la [wiki](./Wiki).
+Para saber más sobre los antecedentes, implementación, tecnologías utilizadas y la ejecución del proyecto accede a la [wiki]([./Wiki](https://github.com/LFelipe06/act_integradora_TC3003B/wiki)).
