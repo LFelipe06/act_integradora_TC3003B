@@ -449,18 +449,18 @@ int main(int argc, char** argv) {
     double avg_byte_rate = total_mb / total_time;
     printf("Tasa de megabytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
 
-    FILE *outputLog = fopen("output_log.txt", "a");
-    if (outputLog == NULL) {
+    FILE *outputLog2 = fopen("output_log.txt", "a");
+    if (outputLog2 == NULL) {
         fprintf(stderr, "Error: No se pudo crear o abrir el archivo de registro.\n");
         return;
     }
 
-    fput(outputLog, "Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
-    fprintf(outputLog, "Tiempo de ejecución: %f segundos\n", total_time);
-    fprintf(outputLog, "Instrucciones totales ejecutadas: %ld\n", total_instructions);
-    fprintf(outputLog, "MIPS ejecutados: %.2f\n", mips);
-    fprintf(outputLog, "Tasa de megabytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
-    fclose(outputLog);
+    fput(outputLog2, "Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
+    fprintf(outputLog2, "Tiempo de ejecución: %f segundos\n", total_time);
+    fprintf(outputLog2, "Instrucciones totales ejecutadas: %ld\n", total_instructions);
+    fprintf(outputLog2, "MIPS ejecutados: %.2f\n", mips);
+    fprintf(outputLog2, "Tasa de megabytes promedio: %.2f bytes/segundo\n", avg_byte_rate);
+    fclose(outputLog2);
 
     MPI_Finalize(); // <-- Agrega esta línea antes de terminar main
 
