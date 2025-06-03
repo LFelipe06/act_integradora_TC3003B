@@ -455,7 +455,7 @@ int main(int argc, char** argv) {
         return;
     }
 
-    fput(outputLog2, "Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
+    fprintf(outputLog2, "Procesamiento completado. Resultados en %s/\n", OUTPUT_DIR);
     fprintf(outputLog2, "Tiempo de ejecución: %f segundos\n", total_time);
     fprintf(outputLog2, "Instrucciones totales ejecutadas: %ld\n", total_instructions);
     fprintf(outputLog2, "MIPS ejecutados: %.2f\n", mips);
