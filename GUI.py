@@ -260,7 +260,7 @@ class ImageProcessorGUI(QMainWindow):
 
         threading.Thread(
             target=self.run_tester_subprocess,
-            args=(["mpiexec", "-n", "3", "./tester"],),
+            args=(["mpiexec","--oversubscribe", "-np", "3", "./tester"],),
             daemon=True
         ).start()
         # if os.path.exists(tester_path):
